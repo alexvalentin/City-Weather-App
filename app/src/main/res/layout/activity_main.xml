@@ -1,123 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/blue_light"
     android:layout_height="match_parent"
     tools:context=".presentation.MainActivity">
 
-    <ImageView
-        android:id="@+id/iconImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@drawable/icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/pleaseTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please choose a city!"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        app:layout_constraintTop_toBottomOf="@id/iconImage"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cityTextField"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/navigationContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:hint="Enter a city"
-        app:boxStrokeColor="@color/white"
-        app:endIconMode="clear_text"
-        app:errorEnabled="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pleaseTv"
-        android:layout_marginTop="24dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cityEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:paddingStart="0dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
-        android:text="Click"
-        style="@style/selectableStatusEnableBtn"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cityTextField" />
-
-    <TextView
-        android:id="@+id/degreesTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Display degrees"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        android:layout_marginTop="24dp"/>
-
-    <TextView
-        android:id="@+id/descriptionTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description: "
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/degreesTv"
-        android:layout_marginBottom="24dp"/>
-
-    <TextView
-        android:id="@+id/humidityTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="humidity: "
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/descriptionTv"
-        android:layout_marginTop="24dp"/>
-
-    <TextView
-        android:id="@+id/statusTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status Weeather"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/humidityTv"
-        />
-
-    <TextView
-        android:id="@+id/windTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wind speed"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/statusTv"
-        />
-
-
+        android:layout_height="match_parent"
+        android:tag="WeatherDisplayFragment"
+        android:name="com.example.weatherappctn.presentation.WeatherDisplayFragment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
