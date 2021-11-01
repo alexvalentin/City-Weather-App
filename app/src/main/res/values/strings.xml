@@ -1,5 +1,116 @@
 <resources>
     <string name="app_name">WeatherAppCtn</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip_text">Skip</string>
+    <string name="title_text">Title Text</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email address</string>
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="new_password">New password</string>
+    <string name="old_password">Old password</string>
+    <string name="confirm_new_password">Confirm new password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="title_let_start">Let\u0027s get Started</string>
+    <string name="title_sign_login_start">Sign up or login and start riding right away</string>
+
+    <string name="terms_cond">By continuing you agree to Move\u0027s
+        <b><u>Terms and Conditions</u></b> and <b><u>Privacy Policy</u></b></string>
+
+    <string name="log_in_here">You already have an account? You can
+        <b><u>log in here</u></b></string>
+
+    <string name="login_text">Login</string>
+    <string name="driving_license">Driving License</string>
+
+    <string name="title_enter_account">Enter your account credentials and start riding away</string>
+    <string name="forgot_password"><u>Forgot your password?</u></string>
+    <string name="dont_have_account">Don\u0027t have an account? You can <u>start with one here</u></string>
+
+    <string name="use_strong_pass">Use a strong password (min. 8 characters and use symbols)</string>
+    <string name="pass_not_match">Password doesn\u0027t match</string>
+
+    <string name="on_boarding_last_page_button_text">Get started ➜</string>
+    <string name="next_button">Next ➜</string>
+
+    <string name="forgot_password_text">Forgot password</string>
+    <string name="reset_password_text">Reset password</string>
+    <string name="description_forgot_password">Enter the email address you\u0027re using
+        for your account bellow and we\u0027ll send you a password reset link.</string>
+
+    <string name="send_reset_link">Sent Reset Link</string>
+
+    <string name="prompt_safety">Safety</string>
+    <string name="prompt_scan">Scan </string>
+    <string name="prompt_ride">Ride</string>
+    <string name="prompt_parking">Parking</string>
+    <string name="prompt_rules">Rules</string>
+    <string name="prompt_from">From</string>
+    <string name="prompt_to">To</string>
+    <string name="travel_time">Travel time</string>
+    <string name="prompt_distance">Distance</string>
+
+
+    <string name="text_safety">Please wear a helmet and protect yourself while riding.</string>
+    <string name="text_scan">Scan the QR code or NFC sticker on top of the scooter to unlock and ride.</string>
+    <string name="text_ride">Step on the scooter with one foot and kick off the ground. When the scooter starts to coast, push the right throttle to accelerate.</string>
+    <string name="text_parking">If convenient, park at a bike rack. If not, park close to the edge of the sidewalk closest to the street. Do not block sidewalks, doors or ramps.</string>
+    <string name="text_rules">You must be 18 years or and older with a valid driving licence to operate a scooter. Please follow all street signs, signals and markings, and obey local traffic laws.</string>
+
+    <string name="before_you_start">Before you can start riding</string>
+    <string name="please_take_photo">Please take a photo or upload the front side of your driving license so we can make sure that it is valid.</string>
+
+    <string name="add_driving_license">Add Driving License</string>
+
+    <string name="not_valid_email">It\u0027s not a valid email.</string>
+    <string name="not_valid_username">It\u0027s not a valid username.</string>
+    <string name="not_valid_password">It\u0027s not a valid password.</string>
+
+    <string name="only_letters_and_numbers">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</string>
+
+    <string name="strong_password"> Your password is strong!</string>
+    <string name="weak_password"> Your password is weak!</string>
+
+    <string name="error_email"> Error! It\u0027s not a valid email!</string>
+    <string name="error_password"> Error! It\u0027s not a valid password!</string>
+
+    <string name="passwords_not_match"> The passwords doesn\u0027t match!</string>
+    <string name="passwords_match"> The passwords match!</string>
+
+    <string name="password_reset_link"> Password reset link sent</string>
+    <string name="check_inbox"> Please check your inbox or spam for the email containing the password reset link.</string>
+    <string name="prompt_ok"> OK</string>
+    <string name="password_not_match"> Password doesn\u0027t match</string>
+    <string name="bottom_dialog_description"> How would you like to add a driving license?</string>
+    <string name="bottom_dialog_take_photo"> Take a photo</string>
+    <string name="bottom_dialog_import_photo"> Import from camera roll</string>
+    <string name="verify_license"> We are currently verifying your driving license</string>
+    <string name="validate_license"> We\u0027ve successfully validated your driving license</string>
+    <string name="find_scooters_button">Find scooters</string>
+    <string name="explore_app_button">Explore the app</string>
+    <string name="prompt_cancel">Cancel</string>
+
+    <string name="check_license_description">Check back shortly and if everything looks good you\u0027ll be riding our scooters in no time.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="allow_location">Allow location</string>
+    <string name="prompt_history">History</string>
+    <string name="total_rides">Total rides: %1s</string>
+    <string name="hello_user">Hi, %1s ></string>
+
+    <string name="see_all_button">See all ></string>
+    <string name="general_settings">General settings</string>
+    <string name="prompt_account">Account</string>
+    <string name="change_password">Change Password</string>
+    <string name="prompt_legal">Legal</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_cond">Terms and Conditions</string>
+    <string name="save_edits_button">Save edits</string>
+
 </resources>

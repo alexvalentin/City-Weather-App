@@ -2,6 +2,7 @@ package com.example.weatherappctn.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
 import com.example.weatherappctn.databinding.ActivityMainBinding
 
 
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
     }
 
