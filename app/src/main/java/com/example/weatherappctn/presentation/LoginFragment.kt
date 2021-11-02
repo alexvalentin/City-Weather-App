@@ -56,6 +56,7 @@ class LoginFragment : Fragment() {
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                        // navigateToFinal()
+                        Toast.makeText(context, "Te-ai logat! ", Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(context, "Login failed, please try again! ", Toast.LENGTH_LONG).show()
                     }

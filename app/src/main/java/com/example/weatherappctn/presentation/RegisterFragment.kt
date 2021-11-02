@@ -54,32 +54,27 @@ class RegisterFragment : Fragment() {
         binding.registerButton.setOnClickListener {
 
             when {
-                TextUtils.isEmpty(binding.firstnameInput.text.toString()) -> {
-                    binding.firstnameInput.error = "Please enter first name "
+                TextUtils.isEmpty(binding.emailSignUp.text.toString()) -> {
+                    binding.emailSignUp.error = "Please enter first name "
                     return@setOnClickListener
                 }
-                TextUtils.isEmpty(binding.lastnameInput.text.toString()) -> {
-                    binding.firstnameInput.error = "Please enter last name "
+                TextUtils.isEmpty(binding.usernameSignUp.text.toString()) -> {
+                    binding.emailSignUp.error = "Please enter user name "
                     return@setOnClickListener
                 }
-                TextUtils.isEmpty(binding.usernameInput.text.toString()) -> {
-                    binding.firstnameInput.error = "Please enter user name "
-                    return@setOnClickListener
-                }
-                TextUtils.isEmpty(binding.passwordInput.text.toString()) -> {
-                    binding.firstnameInput.error = "Please enter password "
+                TextUtils.isEmpty(binding.passwordSignUp.text.toString()) -> {
+                    binding.emailSignUp.error = "Please enter password "
                     return@setOnClickListener
                 }
                 else -> auth.createUserWithEmailAndPassword(
-                    binding.usernameInput.text.toString().trim(),
-                    binding.passwordInput.text.toString().trim()
+                    binding.emailSignUp.text.toString().trim(),
+                    binding.passwordSignUp.text.toString().trim()
                 )
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
                             val currentUser = auth.currentUser
-                            val currentUSerDb = databaseReference?.child((currentUser?.uid!!))
-                            currentUSerDb?.child("firstname")?.setValue(binding.firstnameInput.text.toString())
-                            currentUSerDb?.child("lastname")?.setValue(binding.lastnameInput.text.toString())
+                            val currentUserDb = databaseReference?.child((currentUser?.uid!!))
+                            currentUserDb?.child("username")?.setValue(binding.usernameSignUp.text.toString())
 
                             Toast.makeText(context, "Registration Success. ", Toast.LENGTH_LONG).show()
                            // navigateToLogin()

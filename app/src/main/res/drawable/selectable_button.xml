@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- State Enable-->
-    <item android:color="@color/pink" android:drawable="@drawable/button_pink" android:state_enabled="true" />
+    <item android:color="@color/yellow" android:drawable="@drawable/button_pink" android:state_enabled="true" />
     <!-- State Disabled -->
     <item android:drawable="@drawable/pink_rectangle" android:state_enabled="false" />
 </selector>

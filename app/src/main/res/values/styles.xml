@@ -13,7 +13,7 @@
         <item name="android:focusable">true</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/baijamjuree</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/bluemarin</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:enabled">true</item>
     </style>
@@ -95,6 +95,11 @@
         <item name="fontWeight">500</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/bluemarin</item>
+    </style>
+
+    <style name="MyFilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="hintTextColor">@color/yellow</item>
+        <item name="android:textColorHint">@color/yellow</item>
     </style>
 
 </resources>
