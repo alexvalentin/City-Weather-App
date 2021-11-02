@@ -1,7 +1,7 @@
+
 package com.example.weatherappctn.presentation.onboardingscreen
 
 import android.os.Bundle
-import android.text.Layout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -95,11 +95,9 @@ class OnBoardingScreen : Fragment() {
 
     private fun postToList() {
         onBoardingPages.clear()
-        addToList(OnBoardingPage(R.string.prompt_safety, R.string.text_safety, R.drawable.icon))
-        addToList(OnBoardingPage(R.string.prompt_scan, R.string.text_scan, R.drawable.icon))
-        addToList(OnBoardingPage(R.string.prompt_ride, R.string.text_ride, R.drawable.icon))
-        addToList(OnBoardingPage(R.string.prompt_parking, R.string.text_parking, R.drawable.icon))
-        addToList(OnBoardingPage(R.string.prompt_rules, R.string.text_rules, R.drawable.icon))
+        addToList(OnBoardingPage(R.string.prompt_snowy, R.string.text_safety, R.drawable.winter))
+        addToList(OnBoardingPage(R.string.prompt_sunny, R.string.text_scan, R.drawable.sunny))
+        addToList(OnBoardingPage(R.string.prompt_rainy, R.string.text_ride, R.drawable.thunderstorm))
     }
 
     private fun navigateToRegisterFragment() {

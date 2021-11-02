@@ -46,9 +46,9 @@
 
     <string name="send_reset_link">Sent Reset Link</string>
 
-    <string name="prompt_safety">Safety</string>
-    <string name="prompt_scan">Scan </string>
-    <string name="prompt_ride">Ride</string>
+    <string name="prompt_sunny">Sunny</string>
+    <string name="prompt_rainy">Rainy </string>
+    <string name="prompt_snowy">Snowy</string>
     <string name="prompt_parking">Parking</string>
     <string name="prompt_rules">Rules</string>
     <string name="prompt_from">From</string>
