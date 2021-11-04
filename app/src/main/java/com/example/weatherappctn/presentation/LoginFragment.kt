@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
             auth.signInWithEmailAndPassword(binding.usernameInput.text.toString(), binding.passwordInput.text.toString())
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
-                       // navigateToFinal()
+                        navigateToFinal()
                         Toast.makeText(context, "Te-ai logat! ", Toast.LENGTH_LONG).show()
                     } else {
                         Toast.makeText(context, "Login failed, please try again! ", Toast.LENGTH_LONG).show()
@@ -70,10 +70,10 @@ class LoginFragment : Fragment() {
         }
     }
 
-   // private fun navigateToFinal() {
-    //    val action = LoginFragmentDirections.actionLoginFragmentToWeatherDisplayFragment()
-    ///    findNavController().navigate(action)
-    //}
+    private fun navigateToFinal() {
+        val action = LoginFragmentDirections.actionLoginFragmentToWeatherDisplayFragment()
+        findNavController().navigate(action)
+    }
 
     private fun navigateToRegister() {
         val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
