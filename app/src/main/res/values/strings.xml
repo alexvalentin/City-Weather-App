@@ -55,6 +55,7 @@
     <string name="prompt_to">To</string>
     <string name="travel_time">Travel time</string>
     <string name="prompt_register">Register</string>
+    <string name="prompt_login">Login</string>
 
 
     <string name="text_safety">Please wear a helmet and protect yourself while riding.</string>
