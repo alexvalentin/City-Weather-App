@@ -57,6 +57,11 @@
     <string name="prompt_register">Register</string>
     <string name="prompt_login">Login</string>
 
+    <string name="title_choose_city">Please choose a city!</string>
+    <string name="hint_choose_city">Enter a city</string>
+    <string name="prompt_search">Search</string>
+
+
 
     <string name="text_safety">Please wear a helmet and protect yourself while riding.</string>
     <string name="text_scan">Scan the QR code or NFC sticker on top of the scooter to unlock and ride.</string>

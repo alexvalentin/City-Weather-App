@@ -8,6 +8,7 @@ interface ApiInterface {
     @GET("weather")
     fun getWeatherData(
         @Query("q") cityName : String?,
+        @Query("units") units : String,
         @Query("appid") apikey : String?
     ) : Call<Example?>?
 

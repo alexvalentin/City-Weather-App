@@ -1,6 +1,7 @@
 package com.example.weatherappctn.usecase
 
 import com.google.gson.annotations.SerializedName
+import java.time.ZoneId
 
 data class Example (
     @SerializedName("main")
@@ -10,6 +11,18 @@ data class Example (
     var wind : Wind,
 
     @SerializedName("weather")
-    var weather : List<Weather>
+    var weather : List<Weather>,
+
+    @SerializedName("dt")
+    var dt : Long,
+
+    @SerializedName("timezone")
+    var timezone : Long,
+
+    @SerializedName("name")
+    var nameCity: String,
+
+    @SerializedName("sys")
+    var sys: Sys
 
 )

@@ -1,5 +1,6 @@
 package com.example.weatherappctn.presentation
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.text.SpannableString
@@ -39,10 +40,15 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         insetterNavigationBar()
         clickableStartWithOneHere()
+
+        binding.emailSignUp.setText("test1@test.ro")
+        binding.passwordSignUp.setText("test123A!")
+
 
         auth = FirebaseAuth.getInstance()
 
