@@ -95,9 +95,11 @@ class OnBoardingScreen : Fragment() {
 
     private fun postToList() {
         onBoardingPages.clear()
-        addToList(OnBoardingPage(R.string.prompt_snowy, R.string.text_safety, R.drawable.winter))
-        addToList(OnBoardingPage(R.string.prompt_sunny, R.string.text_scan, R.drawable.sunny))
-        addToList(OnBoardingPage(R.string.prompt_rainy, R.string.text_ride, R.drawable.thunderstorm))
+        addToList(OnBoardingPage(R.string.prompt_degrees, R.string.text_first_page, R.drawable.sunny))
+        addToList(OnBoardingPage(R.string.prompt_temperature, R.string.text_second_page, R.drawable.winter))
+        addToList(OnBoardingPage(R.string.humidity_wind_speed, R.string.text_third_page, R.drawable.thunderstorm))
+        addToList(OnBoardingPage(R.string.sunrise_sunset_hours, R.string.text_fourth_page, R.drawable.logo_sunset))
+
     }
 
     private fun navigateToRegisterFragment() {
@@ -113,6 +115,7 @@ class OnBoardingScreen : Fragment() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
             .applyToView(binding.indicatorSlide)
+
     }
 }
 

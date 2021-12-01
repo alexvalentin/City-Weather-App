@@ -1,7 +1,6 @@
 package com.example.weatherappctn.usecase
 
 import com.google.gson.annotations.SerializedName
-import java.time.ZoneId
 
 data class Example (
     @SerializedName("main")

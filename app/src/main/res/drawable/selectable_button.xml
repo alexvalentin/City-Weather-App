@@ -3,5 +3,5 @@
     <!-- State Enable-->
     <item android:color="@color/yellow" android:drawable="@drawable/button_pink" android:state_enabled="true" />
     <!-- State Disabled -->
-    <item android:drawable="@drawable/pink_rectangle" android:state_enabled="false" />
+    <item android:drawable="@drawable/disabled_button" android:state_enabled="false" />
 </selector>

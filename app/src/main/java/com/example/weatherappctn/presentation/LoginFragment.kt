@@ -43,30 +43,32 @@ class LoginFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         insetterNavigationBar()
         clickableStartWithOneHere()
+        clickableForgotPassword()
 
-        binding.emailSignUp.setText("test1@test.ro")
-        binding.passwordSignUp.setText("test123A!")
+        binding.emailLoginEt.setText("test1@test.ro")
+        binding.passwordLoginEt.setText("test123A!")
 
-
+        // Auth
         auth = FirebaseAuth.getInstance()
 
-        val currentuser = auth.currentUser
-        if (currentuser != null) {
-           // navigateToFinal()
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            navigateToFinal()
         }
 
         login()
 
-        binding.emailSignUp.doAfterTextChanged {
+        binding.emailLoginEt.doAfterTextChanged {
             setLoginButtonEnabledStatus()
-            validateEmailAddress(binding.emailSignUp.text.toString())
+            validateEmailAddress(binding.emailLoginEt.text.toString())
         }
 
-        binding.passwordSignUp.doAfterTextChanged {
+        binding.passwordLoginEt.doAfterTextChanged {
             setLoginButtonEnabledStatus()
-            validatePassword(binding.passwordSignUp.text.toString())
+            validatePassword(binding.passwordLoginEt.text.toString())
         }
     }
 
@@ -88,6 +90,23 @@ class LoginFragment : Fragment() {
         binding.startHereTv.movementMethod = LinkMovementMethod.getInstance()
     }
 
+    private fun clickableForgotPassword() {
+        val spannableStringFP = SpannableString(binding.forgotPasswordTv.text)
+        val clickableSpanFP : ClickableSpan = object : ClickableSpan() {
+            override fun onClick(p0 : View) {
+                navigateToForgotPassword()
+            }
+
+            override fun updateDrawState(ds : TextPaint) {
+                super.updateDrawState(ds)
+                ds.color = Color.WHITE
+            }
+        }
+
+        spannableStringFP.setSpan(clickableSpanFP, 30, binding.forgotPasswordTv.text.length, Spanned.SPAN_INTERMEDIATE)
+        binding.forgotPasswordTv.setText(spannableStringFP, TextView.BufferType.SPANNABLE)
+        binding.forgotPasswordTv.movementMethod = LinkMovementMethod.getInstance()
+    }
 
     private fun login() {
 
@@ -95,35 +114,34 @@ class LoginFragment : Fragment() {
 
 
             when {
-                binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && binding.passwordSignUp.text.toString()
+                binding.emailLoginEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && binding.passwordLoginEt.text.toString()
                     .isFieldValid(PASSWORD_PATTERN)
                 -> {
-                    auth.signInWithEmailAndPassword(binding.emailSignUp.text.toString(), binding.passwordSignUp.text.toString())
+                    auth.signInWithEmailAndPassword(binding.emailLoginEt.text.toString(), binding.passwordLoginEt.text.toString())
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 navigateToFinal()
 
-                                Toast.makeText(context, "Te-ai logat! ", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "You are logged! ", Toast.LENGTH_LONG).show()
                             } else {
                                 Toast.makeText(context, "Login failed, please try again! ", Toast.LENGTH_LONG).show()
                             }
                         }
-
                 }
 
-                !binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && !binding.passwordSignUp.text.toString()
+                !binding.emailLoginEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && !binding.passwordLoginEt.text.toString()
                     .isFieldValid(PASSWORD_PATTERN)
                 -> {
-                    binding.emailTextFieldSignUp.error = getString(R.string.error_email)
-                    binding.passwordTextFieldSignUp.error = getString(R.string.error_password)
+                    binding.emailLoginTil.error = getString(R.string.error_email)
+                    binding.passwordLoginTil.error = getString(R.string.error_password)
                 }
 
-                !binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) -> {
-                    binding.emailTextFieldSignUp.error = getString(R.string.error_email)
+                !binding.emailLoginEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) -> {
+                    binding.emailLoginTil.error = getString(R.string.error_email)
                 }
 
-                !binding.passwordSignUp.text.toString().isFieldValid(PASSWORD_PATTERN) -> {
-                    binding.passwordTextFieldSignUp.error = getString(R.string.error_password)
+                !binding.passwordLoginEt.text.toString().isFieldValid(PASSWORD_PATTERN) -> {
+                    binding.passwordLoginTil.error = getString(R.string.error_password)
                 }
             }
 
@@ -132,33 +150,33 @@ class LoginFragment : Fragment() {
     }
 
     private fun setLoginButtonEnabledStatus() {
-        val isLoginButtonEnabled = binding.emailSignUp.text.toString().isNotEmpty() && binding.passwordSignUp.text.toString().isNotEmpty()
+        val isLoginButtonEnabled = binding.emailLoginEt.text.toString().isNotEmpty() && binding.passwordLoginEt.text.toString().isNotEmpty()
         binding.loginButton.isEnabled = isLoginButtonEnabled
     }
 
     private fun validateEmailAddress(emailAddress : String) {
         if (emailAddress.isNotEmpty()) {
-            if (isEmailValid(binding.emailSignUp.text.toString())) {
-                binding.emailTextFieldSignUp.isErrorEnabled = false
+            if (isEmailValid(binding.emailLoginEt.text.toString())) {
+                binding.emailLoginTil.isErrorEnabled = false
             }
         } else {
-            binding.emailTextFieldSignUp.isErrorEnabled = false
+            binding.emailLoginTil.isErrorEnabled = false
         }
     }
 
     private fun validatePassword(password : String) {
-        binding.passwordSignUp.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
+        binding.passwordLoginEt.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
         if (password.isNotEmpty()) {
 
 
-            if (isPasswordValid(binding.passwordSignUp.text.toString())) {
+            if (isPasswordValid(binding.passwordLoginEt.text.toString())) {
                 Toast.makeText(context, "Strong Password", Toast.LENGTH_SHORT).show()
-                binding.passwordTextFieldSignUp.isErrorEnabled = false
+                binding.passwordLoginTil.isErrorEnabled = false
             }
 
         } else {
-            binding.passwordTextFieldSignUp.isErrorEnabled = false
-            binding.passwordSignUp.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            binding.passwordLoginTil.isErrorEnabled = false
+            binding.passwordLoginEt.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
         }
     }
 
@@ -172,11 +190,15 @@ class LoginFragment : Fragment() {
         findNavController().navigate(action)
     }
 
+    private fun navigateToForgotPassword() {
+        val action = LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment()
+        findNavController().navigate(action)
+    }
+
     private fun insetterNavigationBar() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
-            .applyToView(binding.titleTv)
+            .applyToView(binding.titleLoginTv)
 
     }
-
 }

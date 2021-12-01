@@ -56,19 +56,19 @@ class RegisterFragment : Fragment() {
         goToLoginPage()
         clickableLogInHere()
 
-        binding.emailSignUp.doAfterTextChanged {
+        binding.emailRegisterEt.doAfterTextChanged {
             setRegisterButtonEnabledStatus()
-            validateEmailAddress(binding.emailSignUp.text.toString())
+            validateEmailAddress(binding.emailRegisterEt.text.toString())
         }
 
-        binding.usernameSignUp.doAfterTextChanged {
+        binding.usernameRegisterEt.doAfterTextChanged {
             setRegisterButtonEnabledStatus()
-            validateUserName(binding.usernameSignUp.text.toString())
+            validateUserName(binding.usernameRegisterEt.text.toString())
         }
 
-        binding.passwordSignUp.doAfterTextChanged {
+        binding.passwordRegisterEt.doAfterTextChanged {
             setRegisterButtonEnabledStatus()
-            validatePassword(binding.passwordSignUp.text.toString())
+            validatePassword(binding.passwordRegisterEt.text.toString())
         }
     }
 
@@ -80,9 +80,9 @@ class RegisterFragment : Fragment() {
 
     private fun setRegisterButtonEnabledStatus() {
 
-        val isGetStartedButtonEnabled =  binding.emailSignUp.text.toString().isNotEmpty() &&
-            binding.usernameSignUp.text.toString().isNotEmpty() &&
-            binding.passwordSignUp.text.toString().isNotEmpty()
+        val isGetStartedButtonEnabled = binding.emailRegisterEt.text.toString().isNotEmpty() &&
+            binding.usernameRegisterEt.text.toString().isNotEmpty() &&
+            binding.passwordRegisterEt.text.toString().isNotEmpty()
 
         binding.registerButton.isEnabled = isGetStartedButtonEnabled
 
@@ -92,17 +92,17 @@ class RegisterFragment : Fragment() {
         binding.registerButton.setOnClickListener {
 
             when {
-                binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && binding.passwordSignUp.text.toString()
+                binding.emailRegisterEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && binding.passwordRegisterEt.text.toString()
                     .isFieldValid(PASSWORD_PATTERN) -> {
                     auth.createUserWithEmailAndPassword(
-                        binding.emailSignUp.text.toString().trim(),
-                        binding.passwordSignUp.text.toString().trim()
+                        binding.emailRegisterEt.text.toString().trim(),
+                        binding.passwordRegisterEt.text.toString().trim()
                     )
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
                                 val currentUser = auth.currentUser
                                 val currentUserDb = databaseReference?.child((currentUser?.uid!!))
-                                currentUserDb?.child("username")?.setValue(binding.usernameSignUp.text.toString())
+                                currentUserDb?.child("username")?.setValue(binding.usernameRegisterEt.text.toString())
 
                                 Toast.makeText(context, "Registration Success. ", Toast.LENGTH_LONG).show()
                                 // navigateToLogin()
@@ -114,74 +114,70 @@ class RegisterFragment : Fragment() {
                         }
                     //saveData()
                     //retrieveData()
-                    binding.emailTextFieldSignUp.error = null
-                    binding.passwordTextFieldSignUp.error = null
+                    binding.emailRegisterTil.error = null
+                    binding.passwordRegisterTil.error = null
 
                 }
 
-                !binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && !binding.passwordSignUp.text.toString()
+                !binding.emailRegisterEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && !binding.passwordRegisterEt.text.toString()
                     .isFieldValid(
                         PASSWORD_PATTERN
                     ) -> {
-                    binding.emailTextFieldSignUp.error = getString(R.string.error_email)
-                    binding.passwordTextFieldSignUp.error = getString(R.string.error_password)
+                    binding.emailRegisterTil.error = getString(R.string.error_email)
+                    binding.passwordRegisterTil.error = getString(R.string.error_password)
                 }
 
-                !binding.emailSignUp.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) -> {
-                    binding.emailTextFieldSignUp.error = getString(R.string.error_email)
-                    binding.passwordTextFieldSignUp.error = null
+                !binding.emailRegisterEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) -> {
+                    binding.emailRegisterTil.error = getString(R.string.error_email)
+                    binding.passwordRegisterTil.error = null
                 }
 
-                !binding.passwordSignUp.text.toString().isFieldValid(PASSWORD_PATTERN) -> {
-                    binding.passwordTextFieldSignUp.error = getString(R.string.error_password)
-                    binding.emailTextFieldSignUp.error = null
+                !binding.passwordRegisterEt.text.toString().isFieldValid(PASSWORD_PATTERN) -> {
+                    binding.passwordRegisterTil.error = getString(R.string.error_password)
+                    binding.emailRegisterTil.error = null
                 }
 
             }
-
-
         }
     }
 
     private fun validateEmailAddress(emailAddress : String) {
         if (emailAddress.isNotEmpty()) {
 
-            if (isEmailValid(binding.emailSignUp.text.toString())) {
-                binding.emailTextFieldSignUp.isErrorEnabled = false
+            if (isEmailValid(binding.emailRegisterEt.text.toString())) {
+                binding.emailRegisterTil.isErrorEnabled = false
             }
 
         } else {
-            binding.emailTextFieldSignUp.isErrorEnabled = false
+            binding.emailRegisterTil.isErrorEnabled = false
 
         }
     }
 
     private fun validatePassword(password : String) {
-        binding.passwordSignUp.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
+        binding.passwordRegisterEt.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
         if (password.isNotEmpty()) {
-           /* binding.passwordSignUp.setCompoundDrawablesWithIntrinsicBounds(
-                null,
-                null,
-                ResourcesCompat.getDrawable(resources, R.drawable.icon_password_selector, null),
-                null
-            ) */
+            /* binding.passwordRegisterEt.setCompoundDrawablesWithIntrinsicBounds(
+                 null,
+                 null,
+                 ResourcesCompat.getDrawable(resources, R.drawable.icon_password_selector, null),
+                 null
+             ) */
 
-            if (isPasswordValid(binding.passwordSignUp.text.toString())) {
+            if (isPasswordValid(binding.passwordRegisterEt.text.toString())) {
                 Toast.makeText(context, "Strong Password", Toast.LENGTH_SHORT).show()
-                binding.passwordTextFieldSignUp.isErrorEnabled = false
+                binding.passwordRegisterTil.isErrorEnabled = false
             }
 
         } else {
-            binding.passwordTextFieldSignUp.isErrorEnabled = false
-            binding.passwordSignUp.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
+            binding.passwordRegisterTil.isErrorEnabled = false
+            binding.passwordRegisterEt.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0)
         }
     }
 
     private fun validateUserName(userName : String) {
-        if (userName.isNotEmpty()) {
-
-        } else if (userName.isEmpty()) {
-            binding.usernameSignUp.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
+         if (userName.isEmpty()) {
+            binding.usernameRegisterEt.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
         }
     }
 
@@ -216,6 +212,6 @@ class RegisterFragment : Fragment() {
     private fun insetterNavigationBar() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
-            .applyToView(binding.titleTv)
+            .applyToView(binding.titleRegisterTv)
     }
 }

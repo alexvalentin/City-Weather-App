@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_google_button_menu.xml" value="0.22135416666666666" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/selectable_button.xml" value="0.2546875" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_forgot_password.xml" value="0.23854166666666668" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_on_boarding_image.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_on_boarding_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_register.xml" value="0.23854166666666668" />
-        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_weather_display.xml" value="0.4" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_user_account.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_weather_display.xml" value="0.264" />
       </map>
     </option>
   </component>

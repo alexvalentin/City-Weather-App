@@ -18,13 +18,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:src="@drawable/ic_rectangle_bottom_left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/titleTv"
+        android:id="@+id/titleRegisterTv"
         style="@style/Heading1White"
         android:layout_marginTop="80dp"
         android:text="@string/prompt_register"
@@ -33,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextFieldSignUp"
+        android:id="@+id/emailRegisterTil"
         style="@style/MyFilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,16 +41,15 @@
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         app:boxStrokeColor="@color/white"
-
         app:endIconMode="clear_text"
         app:endIconTint="@color/yellow"
         app:errorEnabled="true"
         app:errorTextColor="@color/pink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTv">
+        app:layout_constraintTop_toBottomOf="@id/titleRegisterTv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailSignUp"
+            android:id="@+id/emailRegisterEt"
             style="@style/Heading4"
             android:background="@color/transparent"
             android:backgroundTint="@color/white"
@@ -63,7 +61,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameTextFieldSignUp"
+        android:id="@+id/usernameRegisterTil"
         style="@style/MyFilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,10 +74,10 @@
         app:errorEnabled="true"
         app:errorTextColor="@color/pink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailTextFieldSignUp">
+        app:layout_constraintTop_toBottomOf="@id/emailRegisterTil">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameSignUp"
+            android:id="@+id/usernameRegisterEt"
             style="@style/Heading4"
             android:background="@color/transparent"
             android:backgroundTint="@color/white"
@@ -92,7 +90,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextFieldSignUp"
+        android:id="@+id/passwordRegisterTil"
         style="@style/MyFilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,12 +102,12 @@
         app:errorEnabled="true"
         app:errorTextColor="@color/pink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/usernameTextFieldSignUp"
+        app:layout_constraintTop_toBottomOf="@id/usernameRegisterTil"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/yellow">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordSignUp"
+            android:id="@+id/passwordRegisterEt"
             style="@style/Heading4"
             android:background="@color/transparent"
             android:inputType="textPassword"
@@ -127,7 +125,7 @@
         android:text="@string/get_started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextFieldSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegisterTil" />
 
     <TextView
         android:id="@+id/loginHereTv"
@@ -135,7 +133,6 @@
         android:layout_marginStart="49dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="49dp"
-        android:fontFamily="@font/baijamjuree"
         android:text="@string/log_in_here"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

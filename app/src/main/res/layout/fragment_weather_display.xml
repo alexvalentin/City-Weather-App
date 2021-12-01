@@ -29,6 +29,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <ImageButton
+            android:id="@+id/mapMenuBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/ic_google_button_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/titleTv"
@@ -80,6 +90,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -98,40 +109,40 @@
 
                 <TextView
                     android:id="@+id/cityDisplayTv"
-                    android:text="City name"
-                    android:textStyle="bold"
-                    android:layout_marginTop="16dp"
-                    android:textSize="24sp"
-                    android:textColor="@color/yellow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="City name"
+                    android:textColor="@color/yellow"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/localHourTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:text="15:30"
                     android:layout_marginTop="24dp"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="15:30"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cityDisplayTv"/>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cityDisplayTv" />
 
                 <TextView
                     android:id="@+id/degreesTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
                     android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
                     android:text="18℃"
                     android:textColor="@color/yellow"
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cityDisplayTv"/>
+                    app:layout_constraintTop_toBottomOf="@id/cityDisplayTv" />
 
                 <TextView
                     android:id="@+id/statusWeatherTv"
@@ -150,102 +161,102 @@
                     android:layout_height="75dp"
                     android:layout_marginTop="48dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cityDisplayTv"/>
+                    app:layout_constraintStart_toEndOf="@id/cityDisplayTv"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <View
                     android:id="@+id/firstLineView"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/blue_heavy"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
+                    android:background="@color/blue_heavy"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/statusWeatherTv"/>
+                    app:layout_constraintTop_toBottomOf="@id/statusWeatherTv" />
 
                 <TextView
                     android:id="@+id/tempMinTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Temp min"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:text="Temp min"
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/firstLineView"/>
+                    app:layout_constraintTop_toBottomOf="@id/firstLineView" />
 
                 <TextView
                     android:id="@+id/tempMaxTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="Temp max"
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tempMinTv"
-                    app:layout_constraintTop_toBottomOf="@id/firstLineView"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/firstLineView" />
 
                 <View
                     android:id="@+id/secondLineView"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/blue_heavy"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
+                    android:background="@color/blue_heavy"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tempMinTv"/>
+                    app:layout_constraintTop_toBottomOf="@id/tempMinTv" />
 
 
                 <TextView
                     android:id="@+id/descriptionStatusWeatherTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="desc weather"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:textSize="16sp"
+                    android:text="desc weather"
                     android:textColor="@color/yellow"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/secondLineView"/>
+                    app:layout_constraintTop_toBottomOf="@id/secondLineView" />
 
                 <TextView
                     android:id="@+id/feelsLikeTempTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feels like"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="64dp"
+                    android:text="Feels like"
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/descriptionStatusWeatherTv"
-                   app:layout_constraintTop_toBottomOf="@id/tempMaxTv"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@id/tempMaxTv" />
 
                 <View
                     android:id="@+id/thirdLineView"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/blue_heavy"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
+                    android:background="@color/blue_heavy"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/descriptionStatusWeatherTv"/>
+                    app:layout_constraintTop_toBottomOf="@id/descriptionStatusWeatherTv" />
 
                 <TextView
                     android:id="@+id/humidityTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="Humidity: "
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/thirdLineView" />
 
@@ -253,9 +264,9 @@
                     android:id="@+id/windTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind speed"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="24dp"
+                    android:text="Wind speed"
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -266,20 +277,20 @@
                     android:id="@+id/fourthLineView"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@color/blue_heavy"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_marginStart="4dp"
+                    android:background="@color/blue_heavy"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/humidityTv"/>
+                    app:layout_constraintTop_toBottomOf="@id/humidityTv" />
 
                 <TextView
                     android:id="@+id/sunriseTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rasarit: "
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
+                    android:text="Rasarit: "
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -289,9 +300,9 @@
                     android:id="@+id/sunsetTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apus: "
-                    android:layout_marginEnd="24dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Apus: "
                     android:textColor="@color/yellow"
                     android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -307,7 +318,6 @@
                     android:textSize="24sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/sunriseTv" /> -->
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

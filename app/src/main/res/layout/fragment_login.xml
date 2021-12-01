@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/titleTv"
+        android:id="@+id/titleLoginTv"
         style="@style/Heading1White"
         android:layout_marginTop="80dp"
         android:text="@string/prompt_login"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextFieldSignUp"
+        android:id="@+id/emailLoginTil"
         style="@style/MyFilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,16 +42,15 @@
         android:layout_marginEnd="24dp"
         android:hint="@string/prompt_email"
         app:boxStrokeColor="@color/white"
-
         app:endIconMode="clear_text"
         app:endIconTint="@color/yellow"
         app:errorEnabled="true"
         app:errorTextColor="@color/pink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTv">
+        app:layout_constraintTop_toBottomOf="@id/titleLoginTv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailSignUp"
+            android:id="@+id/emailLoginEt"
             style="@style/Heading4"
             android:background="@color/transparent"
             android:backgroundTint="@color/white"
@@ -62,7 +61,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextFieldSignUp"
+        android:id="@+id/passwordLoginTil"
         style="@style/MyFilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,12 +73,12 @@
         app:errorEnabled="true"
         app:errorTextColor="@color/pink"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailTextFieldSignUp"
+        app:layout_constraintTop_toBottomOf="@id/emailLoginTil"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/yellow">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passwordSignUp"
+            android:id="@+id/passwordLoginEt"
             style="@style/Heading4"
             android:background="@color/transparent"
             android:inputType="textPassword"
@@ -97,14 +96,14 @@
         android:text="@string/get_started"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordTextFieldSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordLoginTil" />
 
     <TextView
         android:id="@+id/startHereTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="43dp"
         android:fontFamily="@font/baijamjuree"
         android:text="@string/dont_have_account"
@@ -113,5 +112,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+    <TextView
+        android:id="@+id/forgotPasswordTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="43dp"
+        android:fontFamily="@font/baijamjuree"
+        android:text="@string/dont_have_account1"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startHereTv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

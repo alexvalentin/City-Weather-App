@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.weatherappctn.databinding.FragmentWeatherDisplayBinding
 import com.example.weatherappctn.usecase.ApiInterface
@@ -20,7 +21,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 @Suppress("DEPRECATION")
 class WeatherDisplayFragment : Fragment() {
@@ -45,6 +45,7 @@ class WeatherDisplayFragment : Fragment() {
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         insetterStationBar()
+        mapMenuButton()
 
         binding.button.setOnClickListener {
             getWeatherData(
@@ -60,6 +61,17 @@ class WeatherDisplayFragment : Fragment() {
 
     }
 
+    private fun navigateToAccountUserMenu() {
+        val action = WeatherDisplayFragmentDirections.actionWeatherDisplayFragmentToUserAccountFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun mapMenuButton() {
+        binding.mapMenuBtn.setOnClickListener{
+            navigateToAccountUserMenu()
+        }
+    }
+
     private fun getWeatherData(string : String?) {
         if (string != null) {
             val retrofit = Retrofit.Builder()
@@ -71,10 +83,14 @@ class WeatherDisplayFragment : Fragment() {
 
             val exampleCall : Call<Example?>? = myApi.getWeatherData(binding.cityEditText.text.toString().trim(), units, apikey)
 
+            binding.cardView.visibility = View.VISIBLE
+
             exampleCall?.enqueue(object : Callback<Example?> {
 
                 @SuppressLint("SetTextI18n", "SimpleDateFormat", "DefaultLocale")
                 override fun onResponse(call : Call<Example?>, response : Response<Example?>) {
+
+                    //binding.cardView.visibility = View.VISIBLE
 
                     if (response.code() == 404) {
                         Toast.makeText(context, "Please Enter a valid City", Toast.LENGTH_LONG).show()
@@ -129,7 +145,7 @@ class WeatherDisplayFragment : Fragment() {
 
                     // Sunrise hour
                     val sunrise = myData.sys.sunrise
-                    val sunrise1 = Date((sunrise -7200 + timezone) * 1000)
+                    val sunrise1 = Date((sunrise - 7200 + timezone) * 1000)
                     val simpleDateFormat = SimpleDateFormat("HH:mm")
 
 
@@ -138,7 +154,7 @@ class WeatherDisplayFragment : Fragment() {
 
                     // Sunset hour
                     val sunset = myData.sys.sunset
-                    val sunset1 = Date((sunset-7200 + timezone) * 1000)
+                    val sunset1 = Date((sunset - 7200 + timezone) * 1000)
 
                     val sunsetTime = simpleDateFormat.format(sunset1)
                     binding.sunsetTv.text = "Sunset\n$sunsetTime"
@@ -150,7 +166,7 @@ class WeatherDisplayFragment : Fragment() {
 
                     // Current day
                     val timeZone = myData.dt
-                    val date = Date((timeZone-7200 + timezone) * 1000)
+                    val date = Date((timeZone - 7200 + timezone) * 1000)
                     val ceva = simpleDateFormat.format(date)
                     binding.localHourTv.text = ceva
 

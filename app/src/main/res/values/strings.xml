@@ -4,6 +4,8 @@
     <string name="skip_text">Skip</string>
     <string name="title_text">Title Text</string>
     <string name="get_started">Get Started</string>
+    <string name="city_weather">City Weather</string>
+
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email address</string>
@@ -30,8 +32,9 @@
     <string name="driving_license">Driving License</string>
 
     <string name="title_enter_account">Enter your account credentials and start riding away</string>
-    <string name="forgot_password"><u>Forgot your password?</u></string>
+
     <string name="dont_have_account">Don\u0027t have an account? You can <u>start with one here</u></string>
+    <string name="dont_have_account1">Forgot your password? You can <u>change the password here</u></string>
 
     <string name="use_strong_pass">Use a strong password (min. 8 characters and use symbols)</string>
     <string name="pass_not_match">Password doesn\u0027t match</string>
@@ -48,26 +51,25 @@
 
     <string name="prompt_sunny">Sunny</string>
     <string name="prompt_rainy">Rainy </string>
-    <string name="prompt_snowy">Snowy</string>
-    <string name="prompt_parking">Parking</string>
-    <string name="prompt_rules">Rules</string>
-    <string name="prompt_from">From</string>
+    <string name="prompt_degrees">Degrees</string>
+    <string name="prompt_temperature">Temperature interval</string>
+    <string name="humidity_wind_speed">Humidity</string>
+    <string name="sunrise_sunset_hours">Sunrise and Sunset</string>
     <string name="prompt_to">To</string>
     <string name="travel_time">Travel time</string>
     <string name="prompt_register">Register</string>
     <string name="prompt_login">Login</string>
+    <string name="forgot_password">Forgot password</string>
 
     <string name="title_choose_city">Please choose a city!</string>
     <string name="hint_choose_city">Enter a city</string>
     <string name="prompt_search">Search</string>
 
 
-
-    <string name="text_safety">Please wear a helmet and protect yourself while riding.</string>
-    <string name="text_scan">Scan the QR code or NFC sticker on top of the scooter to unlock and ride.</string>
-    <string name="text_ride">Step on the scooter with one foot and kick off the ground. When the scooter starts to coast, push the right throttle to accelerate.</string>
-    <string name="text_parking">If convenient, park at a bike rack. If not, park close to the edge of the sidewalk closest to the street. Do not block sidewalks, doors or ramps.</string>
-    <string name="text_rules">You must be 18 years or and older with a valid driving licence to operate a scooter. Please follow all street signs, signals and markings, and obey local traffic laws.</string>
+    <string name="text_first_page"> You can see the actual temperature in your city and many other at current time.</string>
+    <string name="text_second_page"> The current temperature is displayed with its status weather. Also you can see the minimum and maximum temperature of the current day.</string>
+    <string name="text_third_page"> Humidity and wind speed are two components that maintain our human health. Do not skip them!</string>
+    <string name="text_fourth_page"> Sunrise and sunset hours are displayed for current time zone in each city.</string>
 
     <string name="before_you_start">Before you can start riding</string>
     <string name="please_take_photo">Please take a photo or upload the front side of your driving license so we can make sure that it is valid.</string>
@@ -101,22 +103,8 @@
     <string name="find_scooters_button">Find scooters</string>
     <string name="explore_app_button">Explore the app</string>
     <string name="prompt_cancel">Cancel</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="check_license_description">Check back shortly and if everything looks good you\u0027ll be riding our scooters in no time.</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="allow_location">Allow location</string>
-    <string name="prompt_history">History</string>
-    <string name="total_rides">Total rides: %1s</string>
-    <string name="hello_user">Hi, %1s ></string>
-
-    <string name="see_all_button">See all ></string>
-    <string name="general_settings">General settings</string>
-    <string name="prompt_account">Account</string>
-    <string name="change_password">Change Password</string>
-    <string name="prompt_legal">Legal</string>
-    <string name="rate_us">Rate Us</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_and_cond">Terms and Conditions</string>
-    <string name="save_edits_button">Save edits</string>
 
 </resources>
