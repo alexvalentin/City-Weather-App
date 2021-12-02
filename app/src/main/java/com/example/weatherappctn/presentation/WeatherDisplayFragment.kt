@@ -27,11 +27,9 @@ class WeatherDisplayFragment : Fragment() {
 
     private lateinit var binding : FragmentWeatherDisplayBinding
 
-    //private val onBoardingPages = mutableListOf<OnBoardingPage>()
     //var url = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}"
     private var apikey = "a798f7097c76a6b41da1ef25b4f77e67"
     private val units = "metric"
-
 
     override fun onCreateView(
         inflater : LayoutInflater, container : ViewGroup?,
@@ -41,16 +39,13 @@ class WeatherDisplayFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         insetterStationBar()
         mapMenuButton()
 
         binding.button.setOnClickListener {
-            getWeatherData(
-                binding.cityEditText.text.toString().trim()
-            )
+            getWeatherData(binding.cityEditText.text.toString().trim())
         }
     }
 
@@ -67,7 +62,7 @@ class WeatherDisplayFragment : Fragment() {
     }
 
     private fun mapMenuButton() {
-        binding.mapMenuBtn.setOnClickListener{
+        binding.mapMenuBtn.setOnClickListener {
             navigateToAccountUserMenu()
         }
     }
@@ -89,8 +84,6 @@ class WeatherDisplayFragment : Fragment() {
 
                 @SuppressLint("SetTextI18n", "SimpleDateFormat", "DefaultLocale")
                 override fun onResponse(call : Call<Example?>, response : Response<Example?>) {
-
-                    //binding.cardView.visibility = View.VISIBLE
 
                     if (response.code() == 404) {
                         Toast.makeText(context, "Please Enter a valid City", Toast.LENGTH_LONG).show()
@@ -138,10 +131,8 @@ class WeatherDisplayFragment : Fragment() {
                     val statusWeather = myData.weather[0].main
                     binding.statusWeatherTv.text = statusWeather
 
-
+                    // Timezone
                     val timezone = myData.timezone
-                    Toast.makeText(context, "timezone is: $timezone", Toast.LENGTH_LONG).show()
-
 
                     // Sunrise hour
                     val sunrise = myData.sys.sunrise
@@ -169,8 +160,6 @@ class WeatherDisplayFragment : Fragment() {
                     val date = Date((timeZone - 7200 + timezone) * 1000)
                     val ceva = simpleDateFormat.format(date)
                     binding.localHourTv.text = ceva
-
-
                 }
 
                 override fun onFailure(call : Call<Example?>, t : Throwable) {

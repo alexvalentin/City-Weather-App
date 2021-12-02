@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
 
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            navigateToFinal()
+           // navigateToFinal()
         }
 
         login()
@@ -111,7 +111,6 @@ class LoginFragment : Fragment() {
     private fun login() {
 
         binding.loginButton.setOnClickListener {
-
 
             when {
                 binding.emailLoginEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN) && binding.passwordLoginEt.text.toString()

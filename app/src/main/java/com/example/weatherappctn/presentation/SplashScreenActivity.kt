@@ -17,7 +17,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         binding.root.alpha = 0f
 
-        binding.root.animate().setDuration(5500).alpha(1f).withEndAction {
+        binding.root.animate().setDuration(2500).alpha(1f).withEndAction {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }

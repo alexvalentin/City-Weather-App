@@ -4,7 +4,18 @@
     <string name="skip_text">Skip</string>
     <string name="title_text">Title Text</string>
     <string name="get_started">Get Started</string>
+    <string name="button_sign_out">Sign Out</string>
     <string name="city_weather">City Weather</string>
+    <string name="general_settings">General Settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="title_sign_login_start">Sign up or login and check information about the weather in your city</string>
+
+    <string name="rate_us">Rate Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="prompt_legal">Legal</string>
+    <string name="user_page">User Page</string>
+    <string name="display_hello_user">Hello, %1s</string>
+
 
 
     <!-- Strings related to login -->
@@ -20,7 +31,6 @@
     <string name="login_failed">"Login failed"</string>
 
     <string name="title_let_start">Let\u0027s get Started</string>
-    <string name="title_sign_login_start">Sign up or login and start riding right away</string>
 
     <string name="terms_cond">By continuing you agree to Move\u0027s
         <b><u>Terms and Conditions</u></b> and <b><u>Privacy Policy</u></b></string>
@@ -46,6 +56,7 @@
     <string name="reset_password_text">Reset password</string>
     <string name="description_forgot_password">Enter the email address you\u0027re using
         for your account bellow and we\u0027ll send you a password reset link.</string>
+    <string name="description_reset_password">Enter the new password to change the current password.</string>
 
     <string name="send_reset_link">Sent Reset Link</string>
 

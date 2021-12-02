@@ -74,7 +74,7 @@ class RegisterFragment : Fragment() {
 
     private fun goToLoginPage() {
         binding.loginHereTv.setOnClickListener {
-            navigateToLogin()
+            //navigateToLogin()
         }
     }
 
@@ -100,20 +100,19 @@ class RegisterFragment : Fragment() {
                     )
                         .addOnCompleteListener {
                             if (it.isSuccessful) {
+
                                 val currentUser = auth.currentUser
                                 val currentUserDb = databaseReference?.child((currentUser?.uid!!))
                                 currentUserDb?.child("username")?.setValue(binding.usernameRegisterEt.text.toString())
 
-                                Toast.makeText(context, "Registration Success. ", Toast.LENGTH_LONG).show()
-                                // navigateToLogin()
-                                //navigateToWeather()
+                                Toast.makeText(context, "Successfully registration!", Toast.LENGTH_LONG).show()
+                                navigateToWeatherDisplay()
 
                             } else {
                                 Toast.makeText(context, "Registration failed, please try again! ", Toast.LENGTH_LONG).show()
                             }
                         }
-                    //saveData()
-                    //retrieveData()
+
                     binding.emailRegisterTil.error = null
                     binding.passwordRegisterTil.error = null
 
@@ -136,7 +135,6 @@ class RegisterFragment : Fragment() {
                     binding.passwordRegisterTil.error = getString(R.string.error_password)
                     binding.emailRegisterTil.error = null
                 }
-
             }
         }
     }
@@ -147,7 +145,6 @@ class RegisterFragment : Fragment() {
             if (isEmailValid(binding.emailRegisterEt.text.toString())) {
                 binding.emailRegisterTil.isErrorEnabled = false
             }
-
         } else {
             binding.emailRegisterTil.isErrorEnabled = false
 
@@ -165,7 +162,7 @@ class RegisterFragment : Fragment() {
              ) */
 
             if (isPasswordValid(binding.passwordRegisterEt.text.toString())) {
-                Toast.makeText(context, "Strong Password", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Your email and password are ok!", Toast.LENGTH_SHORT).show()
                 binding.passwordRegisterTil.isErrorEnabled = false
             }
 
@@ -185,7 +182,7 @@ class RegisterFragment : Fragment() {
         val spannableStringLogHere = SpannableString(binding.loginHereTv.text)
         val clickableSpanLogHere : ClickableSpan = object : ClickableSpan() {
             override fun onClick(p0 : View) {
-                goToLoginPage()
+                navigateToLogin()
             }
 
             override fun updateDrawState(ds : TextPaint) {
@@ -204,7 +201,7 @@ class RegisterFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun navigateToWeather() {
+    private fun navigateToWeatherDisplay() {
         val action = RegisterFragmentDirections.actionRegisterFragmentToWeatherDisplayFragment()
         findNavController().navigate(action)
     }
