@@ -1,4 +1,4 @@
-package com.example.weatherappctn.presentation
+package com.example.weatherappctn.presentation.useraccount
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -38,8 +38,8 @@ class UserAccountFragment : Fragment() {
         val user = FirebaseAuth.getInstance().currentUser
 
         if (auth!!.currentUser != null) {
-            Toast.makeText(context, user?.email, Toast.LENGTH_SHORT).show()
-            binding.displayAccountTv.text = "Hello,\n${user?.email}"
+            val userNameDisplay = user!!.email!!.substringBefore("@")
+            binding.displayAccountTv.text = "Hello,\n$userNameDisplay"
         }
     }
 
@@ -49,6 +49,7 @@ class UserAccountFragment : Fragment() {
         clickablePrivacyPolicy()
         changePassword()
         insetterNavigationBar()
+        getScoreOnRatingBar()
     }
 
     private fun changePassword() {
@@ -66,7 +67,7 @@ class UserAccountFragment : Fragment() {
     private fun showPrivacyPolicyDialog() {
         val builder = AlertDialog.Builder(context)
         builder.setTitle("Privacy Policy")
-        builder.setMessage(R.string.check_inbox)
+        builder.setMessage(R.string.dialog_privacy_policy)
         builder.setPositiveButton(R.string.prompt_ok) { _, _ -> }
         builder.show()
     }
@@ -103,6 +104,13 @@ class UserAccountFragment : Fragment() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
             .applyToView(binding.titleHelloUserTv)
+    }
+
+    private fun getScoreOnRatingBar() {
+        binding.rateUsTv.setOnClickListener {
+            val numberOfStars = binding.ratingBar.rating.toString()
+            Toast.makeText(context,"Rating is: $numberOfStars.", Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

@@ -9,13 +9,14 @@
     <string name="general_settings">General Settings</string>
     <string name="change_password">Change Password</string>
     <string name="title_sign_login_start">Sign up or login and check information about the weather in your city</string>
+    <string name="dialog_privacy_policy"> Our application is powered by \u0027openweathermap.org\u0027 to receive data about weather and
+    by \u0027firebase.google.com\u0027 to create registration and login pages.</string>
 
     <string name="rate_us">Rate Us</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="prompt_legal">Legal</string>
     <string name="user_page">User Page</string>
     <string name="display_hello_user">Hello, %1s</string>
-
 
 
     <!-- Strings related to login -->
@@ -38,10 +39,13 @@
     <string name="log_in_here">You already have an account? You can
         <b><u>log in here</u></b></string>
 
+    <string name="password_info">Password must be at least 6 characters in length and  contain <b><u>at least one</u></b> character of the following types: <b>lowercase, uppercase, digit or punctuation</b>.</string>
+    <string name="enter_valid_city">Please enter a valid city!</string>
+
     <string name="login_text">Login</string>
     <string name="driving_license">Driving License</string>
 
-    <string name="title_enter_account">Enter your account credentials and start riding away</string>
+    <string name="title_enter_account">Enter your account credentials and start the journey</string>
 
     <string name="dont_have_account">Don\u0027t have an account? You can <u>start with one here</u></string>
     <string name="dont_have_account1">Forgot your password? You can <u>change the password here</u></string>
@@ -109,13 +113,7 @@
     <string name="bottom_dialog_description"> How would you like to add a driving license?</string>
     <string name="bottom_dialog_take_photo"> Take a photo</string>
     <string name="bottom_dialog_import_photo"> Import from camera roll</string>
-    <string name="verify_license"> We are currently verifying your driving license</string>
-    <string name="validate_license"> We\u0027ve successfully validated your driving license</string>
-    <string name="find_scooters_button">Find scooters</string>
-    <string name="explore_app_button">Explore the app</string>
     <string name="prompt_cancel">Cancel</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

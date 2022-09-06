@@ -1,4 +1,4 @@
-package com.example.weatherappctn.presentation
+package com.example.weatherappctn.presentation.weatherdisplay
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.weatherappctn.R
 import com.example.weatherappctn.databinding.FragmentWeatherDisplayBinding
 import com.example.weatherappctn.usecase.ApiInterface
 import com.example.weatherappctn.usecase.Example
@@ -21,6 +22,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.roundToInt
 
 @Suppress("DEPRECATION")
 class WeatherDisplayFragment : Fragment() {
@@ -52,8 +54,11 @@ class WeatherDisplayFragment : Fragment() {
     private fun insetterStationBar() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(statusBars = true))
-            .applyToView(binding.sunsetTv)
+            .applyToView(binding.cardView)
 
+        Insetter.builder()
+            .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
+            .applyToView(binding.titleTv)
     }
 
     private fun navigateToAccountUserMenu() {
@@ -78,18 +83,22 @@ class WeatherDisplayFragment : Fragment() {
 
             val exampleCall : Call<Example?>? = myApi.getWeatherData(binding.cityEditText.text.toString().trim(), units, apikey)
 
-            binding.cardView.visibility = View.VISIBLE
+             //binding.cardView.visibility = View.VISIBLE
 
             exampleCall?.enqueue(object : Callback<Example?> {
 
                 @SuppressLint("SetTextI18n", "SimpleDateFormat", "DefaultLocale")
                 override fun onResponse(call : Call<Example?>, response : Response<Example?>) {
 
-                    if (response.code() == 404) {
-                        Toast.makeText(context, "Please Enter a valid City", Toast.LENGTH_LONG).show()
+                    if (response.code() == 409) { // 409 conflict error
+                        Toast.makeText(context, R.string.enter_valid_city, Toast.LENGTH_LONG).show()
                     } else if (!response.isSuccessful) {
-                        Toast.makeText(context, response.code().toString() + " ", Toast.LENGTH_LONG).show()
+                        binding.cardView.visibility = View.INVISIBLE
+                        Toast.makeText(context, R.string.enter_valid_city, Toast.LENGTH_LONG).show()
                         return
+                    }
+                    else if(response.isSuccessful) {
+                        binding.cardView.visibility = View.VISIBLE
                     }
 
                     // Get data from Main class
@@ -97,19 +106,22 @@ class WeatherDisplayFragment : Fragment() {
 
                     // City name
                     val nameCity = myData?.nameCity
-                    binding.cityDisplayTv.text = "$nameCity"
+
+                    // Country
+                    val country = myData?.sys?.country
+                    binding.cityDisplayTv.text = "$nameCity, $country"
 
                     // Get data from temperature
                     val temperature = myData?.main?.temp
-                    binding.degreesTv.text = "${temperature?.toInt()}\u2103"
+                    binding.degreesTv.text = "${temperature?.roundToInt()}\u2103"
 
                     // Get minimum temperature of the day
                     val tempMin = myData?.main?.tempMin
-                    binding.tempMinTv.text = "Minimum temperature\n${tempMin?.toInt()}\u2103"
+                    binding.tempMinTv.text = "Minimum temperature\n${tempMin?.roundToInt()}\u2103"
 
                     // Get maximum temperature of the day
                     val tempMax = myData?.main?.tempMax
-                    binding.tempMaxTv.text = "Maximum temperature\n${tempMax?.toInt()}\u2103"
+                    binding.tempMaxTv.text = "Maximum temperature\n${tempMax?.roundToInt()}\u2103"
 
                     // Description Weather
                     val descriptionStatusWeather = myData!!.weather[0].description
@@ -117,7 +129,7 @@ class WeatherDisplayFragment : Fragment() {
 
                     // Get data from feels like
                     val feelsLike = myData.main.feelsLike
-                    binding.feelsLikeTempTv.text = "Feels Like\n${feelsLike.toInt()}℃"
+                    binding.feelsLikeTempTv.text = "Feels Like\n${feelsLike.roundToInt()}℃"
 
                     //Get data from humidity
                     val humidity = myData.main.humidity
@@ -136,18 +148,17 @@ class WeatherDisplayFragment : Fragment() {
 
                     // Sunrise hour
                     val sunrise = myData.sys.sunrise
-                    val sunrise1 = Date((sunrise - 7200 + timezone) * 1000)
+                    val sunriseInCurrentTimezone = Date((sunrise - 7200 + timezone) * 1000)
                     val simpleDateFormat = SimpleDateFormat("HH:mm")
 
-
-                    val sunriseTime = simpleDateFormat.format(sunrise1)
+                    val sunriseTime = simpleDateFormat.format(sunriseInCurrentTimezone)
                     binding.sunriseTv.text = "Sunrise\n$sunriseTime"
 
                     // Sunset hour
                     val sunset = myData.sys.sunset
-                    val sunset1 = Date((sunset - 7200 + timezone) * 1000)
+                    val sunsetInCurrentTimeZone = Date((sunset - 7200 + timezone) * 1000)
 
-                    val sunsetTime = simpleDateFormat.format(sunset1)
+                    val sunsetTime = simpleDateFormat.format(sunsetInCurrentTimeZone)
                     binding.sunsetTv.text = "Sunset\n$sunsetTime"
 
                     // Set icon for status weather
@@ -155,15 +166,15 @@ class WeatherDisplayFragment : Fragment() {
                     val iconUrl = "http://openweathermap.org/img/w/$icon.png"
                     Glide.with(context!!).load(iconUrl).into(binding.iconStatusWeather)
 
-                    // Current day
+                    // Timezone
                     val timeZone = myData.dt
                     val date = Date((timeZone - 7200 + timezone) * 1000)
-                    val ceva = simpleDateFormat.format(date)
-                    binding.localHourTv.text = ceva
+                    val actualTimezone = simpleDateFormat.format(date)
+                    binding.localHourTv.text = actualTimezone
                 }
 
                 override fun onFailure(call : Call<Example?>, t : Throwable) {
-
+                    Toast.makeText(context, "Please Enter a valid City", Toast.LENGTH_LONG).show()
                 }
             })
         }

@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bluemarin"
-    tools:context=".presentation.UserAccountFragment"
+    tools:context=".presentation.useraccount.UserAccountFragment"
     tools:ignore="ContentDescription, RtlSymmetry">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_rectangle_top_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:src="@drawable/ic_rectangle_bottom_left"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/returnToWeatherDisplayIv"
@@ -38,7 +27,7 @@
     <TextView
         android:id="@+id/titleHelloUserTv"
         style="@style/Heading1White"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:text="@string/user_page"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,7 +38,7 @@
         android:id="@+id/userIconIv"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:src="@drawable/icon_user"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +46,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="129dp"
         android:layout_gravity="center"
         android:layout_marginHorizontal="16dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/blue_heavy"
         android:orientation="vertical"
@@ -92,6 +81,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/display_hello_user"
+                android:textSize="16dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="24dp"
                 android:layout_marginBottom="32dp"
                 android:layout_toEndOf="@+id/displayAccountTv"
                 android:backgroundTint="@color/yellow"
@@ -174,8 +164,6 @@
         app:layout_constraintStart_toEndOf="@id/flagImage"
         app:layout_constraintTop_toBottomOf="@id/changePasswordTv" />
 
-
-
     <TextView
         android:id="@+id/privacyPolicyTv"
         android:layout_width="wrap_content"
@@ -220,4 +208,6 @@
          app:layout_constraintStart_toStartOf="@id/rateUsTv"
          app:layout_constraintTop_toBottomOf="@id/rateUsTv"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

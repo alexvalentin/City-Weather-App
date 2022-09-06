@@ -115,7 +115,6 @@ class OnBoardingScreen : Fragment() {
         Insetter.builder()
             .marginBottom(insetType = windowInsetTypesOf(navigationBars = true))
             .applyToView(binding.indicatorSlide)
-
     }
 }
 

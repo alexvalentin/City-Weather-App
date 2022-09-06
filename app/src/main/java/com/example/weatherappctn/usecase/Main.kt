@@ -21,5 +21,4 @@ data class Main (
 
     @SerializedName("pressure")
     var pressure : Int
-
 )

@@ -1,4 +1,4 @@
-package com.example.weatherappctn.presentation
+package com.example.weatherappctn.presentation.register
 
 import android.graphics.Color
 import android.os.Bundle
@@ -46,15 +46,12 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view : View, savedInstanceState : Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        insetterNavigationBar()
+
+        initListeners()
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
         databaseReference = database?.reference!!.child("profile")
-
-        register()
-        goToLoginPage()
-        clickableLogInHere()
 
         binding.emailRegisterEt.doAfterTextChanged {
             setRegisterButtonEnabledStatus()
@@ -72,10 +69,10 @@ class RegisterFragment : Fragment() {
         }
     }
 
-    private fun goToLoginPage() {
-        binding.loginHereTv.setOnClickListener {
-            //navigateToLogin()
-        }
+    private fun initListeners() {
+        insetterNavigationBar()
+        register()
+        clickableLogInHere()
     }
 
     private fun setRegisterButtonEnabledStatus() {
@@ -147,20 +144,12 @@ class RegisterFragment : Fragment() {
             }
         } else {
             binding.emailRegisterTil.isErrorEnabled = false
-
         }
     }
 
     private fun validatePassword(password : String) {
         binding.passwordRegisterEt.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, 0, 0)
         if (password.isNotEmpty()) {
-            /* binding.passwordRegisterEt.setCompoundDrawablesWithIntrinsicBounds(
-                 null,
-                 null,
-                 ResourcesCompat.getDrawable(resources, R.drawable.icon_password_selector, null),
-                 null
-             ) */
-
             if (isPasswordValid(binding.passwordRegisterEt.text.toString())) {
                 Toast.makeText(context, "Your email and password are ok!", Toast.LENGTH_SHORT).show()
                 binding.passwordRegisterTil.isErrorEnabled = false

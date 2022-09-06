@@ -1,4 +1,4 @@
-package com.example.weatherappctn.presentation
+package com.example.weatherappctn.presentation.forgotpassword
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -49,7 +49,7 @@ class ForgotPasswordFragment : Fragment() {
             when {
                 binding.emailForgotPasswordEt.text.toString().isFieldValid(EMAIL_ADDRESS_PATTERN)
                 -> {
-                   showPasswordResetRequestSuccessDialog()
+                    showPasswordResetRequestSuccessDialog()
                 }
             }
         }
@@ -82,7 +82,9 @@ class ForgotPasswordFragment : Fragment() {
         builder.setMessage(R.string.check_inbox)
 
         builder.setPositiveButton(R.string.prompt_ok) { _, _ ->
+
             auth = FirebaseAuth.getInstance()
+
             auth!!.sendPasswordResetEmail(binding.emailForgotPasswordEt.text.toString())
                 .addOnCompleteListener {
                     if (it.isSuccessful) {

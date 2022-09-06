@@ -7,5 +7,8 @@ data class Sys(
     var sunrise : Long,
 
     @SerializedName("sunset")
-    var sunset : Long
+    var sunset : Long,
+
+    @SerializedName("country")
+    var country : String
 )

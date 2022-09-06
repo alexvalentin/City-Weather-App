@@ -1,4 +1,4 @@
-package com.example.weatherappctn.presentation
+package com.example.weatherappctn.presentation.login
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -48,16 +48,9 @@ class LoginFragment : Fragment() {
         clickableStartWithOneHere()
         clickableForgotPassword()
 
-        binding.emailLoginEt.setText("test1@test.ro")
-        binding.passwordLoginEt.setText("test123A!")
-
         // Auth
         auth = FirebaseAuth.getInstance()
-
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-           // navigateToFinal()
-        }
+        auth.currentUser
 
         login()
 
@@ -143,8 +136,6 @@ class LoginFragment : Fragment() {
                     binding.passwordLoginTil.error = getString(R.string.error_password)
                 }
             }
-
-
         }
     }
 

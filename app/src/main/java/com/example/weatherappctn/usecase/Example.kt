@@ -23,5 +23,4 @@ data class Example (
 
     @SerializedName("sys")
     var sys: Sys
-
 )
