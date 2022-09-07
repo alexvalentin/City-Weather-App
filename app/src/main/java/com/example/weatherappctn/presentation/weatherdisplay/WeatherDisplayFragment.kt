@@ -30,7 +30,7 @@ class WeatherDisplayFragment : Fragment() {
     private lateinit var binding : FragmentWeatherDisplayBinding
 
     //var url = "api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}"
-    private var apikey = "a798f7097c76a6b41da1ef25b4f77e67"
+    private var apikey = "secret_api"
     private val units = "metric"
 
     override fun onCreateView(
