@@ -33,7 +33,7 @@
     <TextView
         android:id="@+id/skipTv"
         style="@style/Body2"
-        android:text="Skip"
+        android:text="@string/skip_text"
         android:clickable="true"
         android:textStyle="bold"
         android:focusable="true"

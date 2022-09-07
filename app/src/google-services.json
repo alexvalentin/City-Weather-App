@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "680177824821",
+    "firebase_url": "https://city-weather-app-1c985-default-rtdb.firebaseio.com",
+    "project_id": "city-weather-app-1c985",
+    "storage_bucket": "city-weather-app-1c985.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680177824821:android:ca7ff50c2c1f0d65f2ad7c",
+        "android_client_info": {
+          "package_name": "com.example.weatherappctn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680177824821-2q7s1u68al3j16mq5jb4eeth7ai3mqd3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNxVy6j3ZaEJ78Q1OdiufIQbmGAfVjnPw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680177824821-2q7s1u68al3j16mq5jb4eeth7ai3mqd3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

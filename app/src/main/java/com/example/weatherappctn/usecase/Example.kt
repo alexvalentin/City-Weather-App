@@ -10,6 +10,17 @@ data class Example (
     var wind : Wind,
 
     @SerializedName("weather")
-    var weather : List<Weather>
+    var weather : List<Weather>,
 
+    @SerializedName("dt")
+    var dt : Long,
+
+    @SerializedName("timezone")
+    var timezone : Long,
+
+    @SerializedName("name")
+    var nameCity: String,
+
+    @SerializedName("sys")
+    var sys: Sys
 )
