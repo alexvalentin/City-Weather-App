@@ -12,7 +12,7 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">@font/baijamjuree</item>
+        <item name="android:fontFamily">@font/nexa</item>
         <item name="android:textColor">@color/bluemarin</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:enabled">true</item>
@@ -33,7 +33,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">@font/baijamjuree</item>
+        <item name="android:fontFamily">@font/nexa</item>
         <item name="android:textColor">@color/bluemarin</item>
         <item name="android:background">@drawable/ic_pink_rectangle</item>
         <item name="android:radius">16dp</item>
@@ -43,7 +43,7 @@
     <style name="Body2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="android:textSize">14sp</item>
         <item name="fontWeight">500</item>
         <item name="android:textColor">@color/bluemarin</item>
@@ -52,7 +52,7 @@
     <style name="Heading1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">700</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">32sp</item>
@@ -62,7 +62,7 @@
     <style name="Heading1White">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">700</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">32sp</item>
@@ -73,7 +73,7 @@
     <style name="Heading2">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">500</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/blue_white</item>
@@ -82,7 +82,7 @@
     <style name="Heading3">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">600</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/purple_light</item>
@@ -91,7 +91,7 @@
     <style name="Heading4">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">500</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/bluemarin</item>
@@ -105,7 +105,7 @@
     <style name="SmallText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="fontWeight">400</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/yellow</item>
@@ -114,7 +114,7 @@
     <style name="Body1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="fontFamily">@font/baijamjuree</item>
+        <item name="fontFamily">@font/nexa</item>
         <item name="android:textSize">16sp</item>
         <item name="fontWeight">500</item>
         <item name="android:textColor">@color/white</item>

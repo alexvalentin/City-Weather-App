@@ -15,7 +15,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_rectangle_top_right"
+            android:src="@drawable/ic_triangle_shape"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,7 +128,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="48dp"
             android:layout_marginEnd="43dp"
-            android:fontFamily="@font/baijamjuree"
+            android:fontFamily="@font/nexa"
             android:text="@string/dont_have_account"
             android:textColor="@color/white"
             android:textSize="12sp"
@@ -143,7 +143,7 @@
             android:layout_marginStart="45dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="43dp"
-            android:fontFamily="@font/baijamjuree"
+            android:fontFamily="@font/nexa"
             android:text="@string/dont_have_account1"
             android:textColor="@color/blue_white"
             android:textSize="12sp"
@@ -152,4 +152,5 @@
             app:layout_constraintTop_toBottomOf="@id/startHereTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

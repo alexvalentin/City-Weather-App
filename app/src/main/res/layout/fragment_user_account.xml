@@ -70,7 +70,7 @@
                 android:layout_marginStart="-60dp"
                 android:layout_marginTop="-50dp"
                 android:elevation="20dp"
-                android:src="@drawable/rounded_shape_cardview"
+                android:src="@drawable/ic_triangle_shape"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +81,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:text="@string/display_hello_user"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"

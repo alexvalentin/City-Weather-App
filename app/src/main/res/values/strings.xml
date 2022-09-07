@@ -8,7 +8,7 @@
     <string name="city_weather">City Weather</string>
     <string name="general_settings">General Settings</string>
     <string name="change_password">Change Password</string>
-    <string name="title_sign_login_start">Sign up or login and check information about the weather in your city</string>
+    <string name="title_sign_login_start">Sign up or login and next step is to check information about the weather in your city</string>
     <string name="dialog_privacy_policy"> Our application is powered by \u0027openweathermap.org\u0027 to receive data about weather and
     by \u0027firebase.google.com\u0027 to create registration and login pages.</string>
 
@@ -39,16 +39,16 @@
     <string name="log_in_here">You already have an account? You can
         <b><u>log in here</u></b></string>
 
-    <string name="password_info">Password must be at least 6 characters in length and  contain <b><u>at least one</u></b> character of the following types: <b>lowercase, uppercase, digit or punctuation</b>.</string>
+    <string name="password_info">Password must be at least 6 characters in length and contain <b><u>at least one</u></b> character of the following types: <b>lowercase, uppercase, digit or punctuation</b>.</string>
     <string name="enter_valid_city">Please enter a valid city!</string>
 
     <string name="login_text">Login</string>
     <string name="driving_license">Driving License</string>
 
-    <string name="title_enter_account">Enter your account credentials and start the journey</string>
+    <string name="title_enter_account">Enter your account credentials and start the navigation</string>
 
-    <string name="dont_have_account">Don\u0027t have an account? You can <u>start with one here</u></string>
-    <string name="dont_have_account1">Forgot your password? You can <u>change the password here</u></string>
+    <string name="dont_have_account">Don\u0027t have an account? You can <u>start with one here.</u></string>
+    <string name="dont_have_account1">Forgot your password? You can <u>change the password here.</u></string>
 
     <string name="use_strong_pass">Use a strong password (min. 8 characters and use symbols)</string>
     <string name="pass_not_match">Password doesn\u0027t match</string>
@@ -67,7 +67,7 @@
     <string name="prompt_sunny">Sunny</string>
     <string name="prompt_rainy">Rainy </string>
     <string name="prompt_degrees">Degrees</string>
-    <string name="prompt_temperature">Temperature interval</string>
+    <string name="prompt_temperature">Status of the day</string>
     <string name="humidity_wind_speed">Humidity</string>
     <string name="sunrise_sunset_hours">Sunrise and Sunset</string>
     <string name="prompt_to">To</string>

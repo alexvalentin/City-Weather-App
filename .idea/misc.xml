@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22291666666666668" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/button_pink.xml" value="0.17864583333333334" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_arrow_left.xml" value="0.2703125" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_arrow_return_page.xml" value="0.17864583333333334" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_google_button_menu.xml" value="0.22135416666666666" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_icon_flag.xml" value="0.25104166666666666" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_icon_rate_star.xml" value="0.25104166666666666" />
@@ -15,8 +17,11 @@
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_rectangle_bottom_left.xml" value="0.22291666666666668" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_rectangle_top_right.xml" value="0.2703125" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/ic_rectangle_viewpager.xml" value="0.22291666666666668" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/rounded_shape_cardview.xml" value="0.17864583333333334" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/selectable_button.xml" value="0.2546875" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/drawable/white_radius.xml" value="0.22291666666666668" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/font/font_baijamjuree.xml" value="0.2359375" />
+        <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/font/font_nexa.xml" value="0.2359375" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/Tapptitude/WeatherAppCtn/app/src/main/res/layout/fragment_forgot_password.xml" value="0.264" />

@@ -24,7 +24,7 @@
         android:id="@+id/titleSplashScreenTv"
         android:text="@string/city_weather"
         android:textSize="48sp"
-        android:fontFamily="@font/font_baijamjuree"
+        android:fontFamily="@font/font_nexa"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
